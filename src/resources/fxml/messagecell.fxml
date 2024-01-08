@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="mainOuterBody" fillWidth="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: #1a1a1a; -fx-background-image: url('resources/images/chatsbg.png'); -fx-background-size: cover; -fx-background-repeat: no-repeat; -fx-background-position: center center;">
+   <children>
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+            <Label fx:id="messageDate" textAlignment="CENTER" textFill="#8e8e93">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="messageTime" textFill="#8e8e93">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox fx:id="outerBody" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" onMouseEntered="#showDate" onMouseExited="#hideDate" style="-fx-background-color: #292929; -fx-border-color: #545454; -fx-border-width: 1px; -fx-border-radius: 10px; -fx-padding: 10px;">
+         <children>
+            <Label fx:id="actualSender" text="No one">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="fileImageView" pickOnBounds="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fx:id="downloadButton" onMouseClicked="#getFileFromServer" pickOnBounds="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="messageBody" contentDisplay="CENTER" maxWidth="200.0" text="Message Body" wrapText="true" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="10.0" right="8.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>

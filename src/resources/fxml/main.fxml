@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.effect.InnerShadow?>
+
+<SplitPane dividerPositions="0.3595317725752508" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+
+   <items>
+
+      <AnchorPane style="-fx-background-image: url('resources/images/chatsbg.png'); -fx-background-size: cover; -fx-background-color: #2e2e2e;">
+         <children>
+
+            <VBox prefHeight="398.0" prefWidth="212.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" style="-fx-background-color: #333333; -fx-border-color: #555555; -fx-border-width: 1px; -fx-border-radius: 5px; -fx-padding: 10px;">
+               <children>
+
+                  <TextField fx:id="searchTextField" promptText="Search" style="-fx-background-color: #444444; -fx-border-color: #555555; -fx-border-radius: 5px; -fx-padding: 5px; -fx-text-fill: #ffffff;"/>
+
+                  <ListView fx:id="peopleListView" onMouseClicked="#fetchMessages" VBox.vgrow="ALWAYS" style="-fx-background-color: #333333; -fx-text-fill: #ffffff;"/>
+
+               </children>
+            </VBox>
+
+         </children>
+      </AnchorPane>
+
+      <AnchorPane style="-fx-background-image: url('your_background_image_path'); -fx-background-size: cover; -fx-background-color: #1a1a1a;">
+         <children>
+
+            <VBox prefHeight="398.0" prefWidth="380.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" style="-fx-background-color: #333333; -fx-border-color: #555555; -fx-border-width: 1px; -fx-border-radius: 5px; -fx-padding: 10px;">
+               <children>
+
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT">
+                     <children>
+
+                        <Button mnemonicParsing="false" onMouseClicked="#createGroup" style="-fx-background-color: #4285f4; -fx-background-radius: 5px; -fx-text-fill: #ffffff;" text="Create Group">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+
+                        <ComboBox fx:id="notificationsComboBox" onAction="#handleNotification" prefWidth="130.0" promptText="Notifications" style="-fx-background-color: #4285f4; -fx-border-color: #4285f4; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-text-fill: #ffffff;" visibleRowCount="7">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+
+                        <Label fx:id="notificationsCount" alignment="CENTER" minHeight="25.0" minWidth="25.0" style="-fx-background-radius: 20; -fx-background-color: #db4437; -fx-text-fill: #ffffff;" text="0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+
+                  <ListView fx:id="messageListView" onMouseClicked="#openFile" VBox.vgrow="ALWAYS" style="-fx-background-color: #333333; -fx-text-fill: #ffffff;"/>
+
+                  <HBox>
+                     <children>
+
+                        <TextField fx:id="messageTextField" onKeyPressed="#pressedEnter" promptText="Say something..." HBox.hgrow="ALWAYS" style="-fx-background-color: #444444; -fx-border-color: #555555; -fx-border-radius: 5px; -fx-padding: 5px; -fx-text-fill: #ffffff;"/>
+
+                        <Button mnemonicParsing="false" onAction="#openChooser" style="-fx-background-color: #4285f4; -fx-background-radius: 5px; -fx-text-fill: #ffffff;" text="Upload">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+
+                        <Button mnemonicParsing="false" onAction="#sendMessage" style="-fx-background-color: #34a853; -fx-background-radius: 5px; -fx-text-fill: #ffffff;" text="Send">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+
+               </children>
+            </VBox>
+
+         </children>
+      </AnchorPane>
+
+   </items>
+   <effect>
+      <InnerShadow />
+   </effect>
+
+</SplitPane>
